@@ -40,7 +40,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="{Binding Nazwa}"></Label>
-                                <Label Content="{Binding cena}"></Label>
+                                <Label Content="{Binding Cena}"></Label>
                                 <Label Content="{Binding Opis}"></Label>
                                 <Label Content="{Binding Dostepny}"></Label>
                             </StackPanel>
@@ -81,7 +81,18 @@
                       RowBackground="Aqua"
                       AlternatingRowBackground="Bisque"
                       AlternationCount="3"
-                      IsReadOnly="True"></DataGrid>
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="nazwa produktu"
+                                            Binding="{Binding Nazwa}"/>
+                        <DataGridCheckBoxColumn Header="Dostepnosc Produktu"
+                                                Binding="{Binding Dostepny}"/>
+                        <DataGridComboBoxColumn Header="kategoria produktu"
+                                                x:Name="kategorieDataGridCombo"
+                                                SelectedItemBinding="{Binding Kategoria}"/>
+                    </DataGrid.Columns>
+            </DataGrid>
                 
             </StackPanel>
         </TabItem>
