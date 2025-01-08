@@ -32,7 +32,12 @@ namespace WpfApp1
             Produkty.Add(new Class1("komputer", 1502, "komputer biurowy", true, "komputer"));
             Produkty.Add(new Class1("drukarka", 600, "drukarka atramentowa", true, "urzadzenia peryferyjne"));
             Produkty.Add(new Class1("mysz", 200, "mysz komputerowa", true, "akcesoria"));
+            List<string> list = new List<string>();
+            list.Add("akcesoria");
+            list.Add("komputer");
+            list.Add("urzadzenia peryferyjne");
             DataContext = this;
+            kategorieDataGridCombo.ItemsSource = list;
         }
     }
 }
